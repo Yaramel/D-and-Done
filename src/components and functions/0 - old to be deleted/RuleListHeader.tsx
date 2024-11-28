@@ -1,0 +1,59 @@
+// import React from "react";
+// import { BiFontSize } from "react-icons/bi";
+// import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
+
+// export default function RuleListHeader() {
+
+//     return (
+//         // <>
+//         //     <ul className="custom-list">
+//         //         <li >
+//         //             <div className="p-3" style={{ fontSize: "small" }}>
+//         //                 <div className="container">
+//         //                     <div className="row d-flex align-items-center ">
+//         //                         <div className="col-md-1 d-flex align-items-center">
+//         //                             <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" style={{ opacity: "0" }} />
+//         //                             <div className="d-flex align-items-center m-2">Level</div>
+//         //                         </div>
+//         //                         <div className="col-md-1 ">Name</div>
+//         //                         <div className="col-md-1 " style={{ whiteSpace: 'nowrap' }}>Cating Time</div>
+//         //                         <div className="col-md-2 ">Duration</div>
+//         //                         <div className="col-md-1">Range/Area</div>
+//         //                         <div className="col-md-2">Attack/Save</div>
+//         //                         <div className="col-md-1">Damage/Effect</div>
+//         //                         <div className="col-md-2 m-3">School</div>
+//         //                         <div className="col-md-1"></div>
+//         //                     </div>
+//         //                 </div>
+//         //             </div>
+//         //         </li>
+//         //     </ul >
+//         // </>
+//         <>
+//             <ul className="custom-list">
+//                 <li >
+//                     <div className="my-3 mx-3 titleText" style={{ fontSize: "small" }}>
+//                         <div className="container">
+//                             <div className="row">
+//                                 <div className="col-md-1">
+//                                 <div className="col-md-1 mx-2">Level</div>
+//                                 </div>
+                                
+//                                 <div className="col-md-1">Name</div>
+//                                 <div className="col-md-1" style={{ whiteSpace: 'nowrap' }}>Cating Time</div>
+//                                 <div className="col-md-2 ">Duration</div>
+//                                 <div className="col-md-1">Range/Area</div>
+//                                 <div className="col-md-2">Attack/Save</div>
+//                                 <div className="col-md-1">Damage/Effect</div>
+//                                 <div className="col-md-2  mx-4">School</div>
+//                                 <div className="col-md-1"></div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </li>
+//             </ul >
+//         </>
+
+//     );
+
+// }
