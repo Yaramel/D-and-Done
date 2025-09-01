@@ -1,4 +1,3 @@
-import React from 'react';
 import DDoneButton from './DDoneButton';
 
 interface Inputs {

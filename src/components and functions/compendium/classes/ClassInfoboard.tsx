@@ -65,7 +65,7 @@ export default function ClassInfoBoard({ classData }: inputs) {
                 <div className="panel-body inf-content rounded spellBoard p-5 background-camp-image-with-opacity"
 
                     style={{
-                        '--background-image-url': `url(${ClassUrl})`,
+                        backgroundImage: `url(${ClassUrl})`,
                         color: 'white',
                     }}>
                     <div className="row ">

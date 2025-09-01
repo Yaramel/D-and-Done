@@ -1,7 +1,4 @@
-import React from "react";
-
 export function MagicItemListHeader() {
-
     return (
         <>
             <ul className="custom-list list-header">

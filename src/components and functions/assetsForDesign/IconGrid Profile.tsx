@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { GiScrollUnfurled, GiSpellBook, GiDwarfFace, GiCrowNest } from 'react-icons/gi';
+import { GiScrollUnfurled, GiSpellBook, GiDwarfFace} from 'react-icons/gi';
 import profImg from '/src/assets/profile.png';
 import { useUser } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';

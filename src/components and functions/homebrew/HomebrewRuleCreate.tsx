@@ -112,7 +112,7 @@ export default function HomebrewRuleCreate() {
       <div className="text-center background-camp-image"
 
         style={{
-          '--background-image-url': `url(${nopUrl})`,
+          backgroundImage: `url(${nopUrl})`,
           color: 'white',
         }}>
         <h1 style={{ marginTop: "25%", filter: "drop-shadow(1px 1px 1px black) drop-shadow(-1px -1px 1px black)" }}>Please log in as Master to create homebrew rules.</h1>

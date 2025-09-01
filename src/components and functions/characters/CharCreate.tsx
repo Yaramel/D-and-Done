@@ -67,9 +67,9 @@ export default function CharCreate() {
         setCharClassPic(value);
     };
 
-    const classImageUrl = `/src/assets/classes/${charClassPic}.png`;
+    // const classImageUrl = `/src/assets/classes/${charClassPic}.png`;
 
-    var classBGImageUrl = `/src/assets/classes/illustrations/${charClassPic}.png`;
+    let classBGImageUrl = `/src/assets/classes/illustrations/${charClassPic}.png`;
     if (charClass == "Select") {
         classBGImageUrl = `/src/assets/classes/illustrations/noclass.png`
     }
@@ -522,7 +522,7 @@ export default function CharCreate() {
             <div className="text-center background-camp-image"
 
                 style={{
-                    '--background-image-url': `url(${nopUrl})`,
+                    backgroundImage: `url(${nopUrl})`,
                     color: 'white',
                 }}>
                 <h1 style={{ marginTop: "25%", filter: "drop-shadow(1px 1px 1px black) drop-shadow(-1px -1px 1px black)" }}>
@@ -553,7 +553,7 @@ export default function CharCreate() {
 
                         <div className="panel-body inf-content rounded p-5 spellBoard background-camp-image-with-opacity"
                             style={{
-                                '--background-image-url': `url(${classBGImageUrl})`,
+                                backgroundImage: `url(${classBGImageUrl})`,
                                 color: 'white',
                                 overflow: "visible"
                             }}>

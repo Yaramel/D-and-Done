@@ -247,7 +247,7 @@ export default function CampaignCreate() {
             <div className="text-center background-camp-image"
 
                 style={{
-                    '--background-image-url': `url(${nopUrl})`,
+                    backgroundImage: `url(${nopUrl})`,
                     color: 'white',
                     
                 }}>
@@ -273,7 +273,7 @@ export default function CampaignCreate() {
                     <div className="container " >
                         <div className="panel-body inf-content rounded p-5 spellBoard background-camp-image-with-opacity"
                             style={{
-                                '--background-image-url': `url(${themeUrl})`,
+                                backgroundImage: `url(${themeUrl})`,
                                 color: 'white',
                                 overflow: "visible"
                             }}>

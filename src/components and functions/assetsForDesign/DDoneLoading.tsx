@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Inputs {
   isLoading: boolean;
   isOK?: boolean;

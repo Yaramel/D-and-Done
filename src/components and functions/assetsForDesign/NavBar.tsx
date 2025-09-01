@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { FaDiceD20 } from 'react-icons/fa';
 import { Dropdown } from 'react-bootstrap';
@@ -77,7 +78,8 @@ export default function Navbar() {
                                 <li className="nav-item">
                                     <a className={currentPath === "/profile" ? "nav-link active" : "nav-link"} href="/profile" onClick={(e) => {e.preventDefault(); handleNavClick('/profile');}}>Profile</a>
                                 </li>
-                                {user?.length >= 0 && !user[0].isMaster && (
+                                {/* {user?.length >= 0 && !user[0].isMaster && ( */}
+                                {(user as any)?.length >= 0 && !(user as any).isMaster && (
                                     <li className="nav-item">
                                         <a className={currentPath === "/characters" ? "nav-link active" : "nav-link"} href="/characters" onClick={(e) => {e.preventDefault(); handleNavClick('/characters');}}>My Characters</a>
                                     </li>

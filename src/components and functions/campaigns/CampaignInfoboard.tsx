@@ -46,7 +46,7 @@ export default function CampaignInfoboard({ campaignData }: CampaignInfoboardPro
                         <br />
                         <div className="panel-body inf-content rounded p-5 spellBoard background-camp-image-with-opacity"
                             style={{
-                                '--background-image-url': `url(${themeImageUrl})`,
+                                backgroundImage: `url(${themeImageUrl})`,
                                 color: 'white',
                             }}
                         >

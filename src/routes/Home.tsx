@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import DDoneButton from '../components and functions/assetsForDesign/DDoneButton';
 import IconGrid from '../components and functions/assetsForDesign/IconGrid';
@@ -39,7 +40,7 @@ function Header({ isLogged, isMaster }) {
 
     return (
         <>
-            <header className="title" style={{ backgroundImage: `url(${headerImg})`, backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '50px 0' }}>
+            <header className="title" style={{backgroundImage: `url(${headerImg})`, backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '50px 0' }}>
                 <div className="container text-center">
                     <div className="row justify-content-center">
                         <div className="container">
@@ -132,7 +133,10 @@ export default function Home() {
     }, []);
 
     const checkMaster = async () => {
-        setMaster(user[0].isMaster)
+        const isMaster = (user as any)?.isMaster? true : false;
+        if(isMaster){
+            setMaster(isMaster);
+        }
     };
 
     useEffect(() => {

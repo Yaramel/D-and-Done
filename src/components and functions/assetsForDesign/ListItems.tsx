@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 import DDoneButton from './DDoneButton.tsx';
 import { FaTrashAlt } from "react-icons/fa";
@@ -459,7 +459,7 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
         return (
             <div className="camp-list-item rounded p-3  text-center background-camp-image"
                 style={{
-                    '--background-image-url': `url(${NoCampaignUrl})`,
+                    backgroundImage: `url(${NoCampaignUrl})`,
                     color: 'white',
                 }}>
                 <div className="char-list-frame-null rounded p-3 text-center">
@@ -485,7 +485,7 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
     return (
         <div className="camp-list-item rounded p-3  text-center background-camp-image"
             style={{
-                '--background-image-url': `url(${CampaignUrl})`,
+                backgroundImage: `url(${CampaignUrl})`,
                 color: 'white',
             }}>
             <div className="camp-details">

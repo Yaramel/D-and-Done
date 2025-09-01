@@ -6,7 +6,7 @@ export default function ErrorPage() {
 
         <div className="  text-center background-camp-image-404"
             style={{
-                '--background-image-url': `url(${NotfoundUrl})`,
+                backgroundImage: `url(${NotfoundUrl})`,
                 color: 'white',
             }}
         >

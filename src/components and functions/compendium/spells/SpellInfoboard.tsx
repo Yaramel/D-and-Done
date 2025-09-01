@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+// import React from "react";
 import BreadcrumbNav from "../../assetsForDesign/BreabcrumbNav";
 
 interface inputs {
@@ -22,7 +22,7 @@ export default function SpellInfoBoard({ spellData }: inputs) {
                 <br />
                 <div className="panel-body inf-content rounded p-5 spellBoard background-camp-image-with-opacity"
                     style={{
-                        '--background-image-url': `url(${spellUrl})`,
+                        backgroundImage: `url(${spellUrl})`,
                         color: 'white',
                     }}>
                     <div className="row">

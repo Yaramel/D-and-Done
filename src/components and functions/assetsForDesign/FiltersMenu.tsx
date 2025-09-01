@@ -495,7 +495,7 @@ export const EquipmentFilter: React.FC<EquipmentFilterProps> = ({ onEquipmentFil
 };
 
 
-export function CampaignFilter ({ onCampFilterChange , isYours, isPlayer }:CampFilterProps) {
+export function CampaignFilter ({ onCampFilterChange , isYours, isPlayer }:Partial<CampFilterProps>) {
     const [filterText, setFilterText] = useState('');
     const [filterText2, setFilterText2] = useState('');
     const [campTheme, setCampTheme] = useState('');

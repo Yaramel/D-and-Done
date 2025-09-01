@@ -10,7 +10,7 @@ interface DDoneTextInputProps {
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const DDoneTextInput: React.FC<DDoneTextInputProps> = ({ width, placeholder, value, isNumber, limit, onChange, onKeyPress }) => {
+const DDoneTextInput: React.FC<DDoneTextInputProps> = ({ width, placeholder, isNumber, limit, onChange, onKeyPress }) => {
 
   const [actualValue, setActualValue] = useState('')
 

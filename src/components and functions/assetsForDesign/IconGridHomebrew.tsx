@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GiScrollUnfurled, GiSpellBook, GiSwordsEmblem, GiMagicAxe } from 'react-icons/gi';
-import HBImg from '/src/assets/hb.png';
+// import HBImg from '/src/assets/hb.png';
 import forgImg from '/src/assets/forg.png';
 import { useUser } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
