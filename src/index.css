@@ -230,6 +230,8 @@ header {
   bottom: 0;
   left: 0;
   z-index: -1;
+    background-repeat: no-repeat;
+    
   /* Ensure it is behind the content */
 }
 
@@ -240,29 +242,32 @@ header {
   overflow: hidden;
   /* Prevent content overflow from affecting the div size */
   min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  
   /* Ensure the div takes at least the full height of the viewport */
 }
 
 .background-camp-image-with-opacity::before {
-  height: 100%;
-  width: 100%;
   content: "";
-  background-image: var(--background-image-url);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  opacity: 0.3;
-  /* Adjust this value for desired opacity */
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0; /* cobre 100% do container */
   z-index: -1;
-  /* Ensure it is behind the content */
-}
 
+  /* imagem */
+  background-image: var(--background-image-url);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  /* overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: darken;
+}
 
 .background-camp-image {
   position: relative;

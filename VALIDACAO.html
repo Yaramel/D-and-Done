@@ -1,138 +1,189 @@
 <!DOCTYPE html>
-
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&Done</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+  </head>
 
-<head>
-    <script type="module">
-        import RefreshRuntime from "/@react-refresh"
-        RefreshRuntime.injectIntoGlobalHook(window)
-        window.$RefreshReg$ = () => { }
-        window.$RefreshSig$ = () => (type) => type
-        window.__vite_plugin_react_preamble_installed__ = true
-    </script>
-
-    <script type="module" src="/@vite/client"></script>
-
-    <meta charset="UTF-8">
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D&amp;Done</title>
-    <style type="text/css"
-        data-vite-dev-id="C:/Users/Yara/Dropbox/Outros/0 - EI Books/Ano 2/Semestre 2/Tecnologias para a Web e Ambientes Móveis/Yara/Trabalho Grupo 2/Web_App/node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-
-    </style>
-</head>
-
-<body>
+  <body>
     <div id="root">
-        <div>
-            <header>
-                <nav class="navbar navbar-custom navbar-expand-lg container">
-                    <div class="container-fluid"><button class="navbar-toggler custom-toggler" type="button"
-                            data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                            aria-expanded="false" aria-label="Toggle navigation"><span
-                                class="navbar-toggler-icon"></span></button><a class="navbar-brand px-5" href="/"><img
-                                src="/src/assets/logo.png" alt="Logo" width="30" height="30"
-                                class="d-inline-block align-text-top"></a>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Compendium</a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                                <li class="nav-item"><a class="nav-link active" href="/characters">My Characters</a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/campaigns/lobby">Campaigns Lobby</a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/campaigns">My Campaigns</a></li>
-                            </ul>
-                        </div>
-                        <div class="navbar-text">
-                            <div class="navbar-dropdown dropdown">
-                                <div class="circle-icon dropdown-toggle" id="react-aria5044136685-:r1:"
-                                    aria-expanded="false" role="button" aria-haspopup="true"><span
-                                        style="color: black; font-size: 32px; font-weight: 700;">R</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-            <div class="even-section">
-                <ul class="custom-list">
-                    <li>
-                        <div class="container">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb" style="background-color: transparent;">
-                                    <li class="breadcrumb-item"><a href="/">Compendium</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Characters</a>
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div><br>
-                        <div class="container">
-                            <h1 class="container titleText"> Your Characters</h1>
-                        </div>
-                    </li>
+      <div>
+        <header>
+          <nav class="navbar navbar-custom navbar-expand-lg container">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler custom-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand px-5" href="/"
+                ><img
+                  src="/logo.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+              /></a>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Compendium</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/characters">My Characters</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/campaigns/lobby">Campaigns Lobby</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/campaigns">My Campaigns</a>
+                  </li>
                 </ul>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-3 my-5">
-                                    <div class="char-list-item-null rounded p-3 my-3 text-center">
-                                        <div class="char-list-frame-null rounded p-3 my-3 text-center">
-                                            <div class="char-name-box-null">
-                                                <div class="char-name-null">New Character</div>
-                                            </div>
-                                            <div class="char-list-frame-null2 rounded p-3 my-3 text-center">
-                                                <div class="char-item-content-null"><img class="char-class-image-null"
-                                                        src="/src/assets/nochar.png" alt="Create Character"></div>
-                                            </div>
-                                        </div>
-                                        <div id="createCharButton"><button class="btn custom-button"
-                                                style="width: 150px; height: 2.4em;">Create Character</button></div>
-                                    </div>
-                                </div>
-                            </div><br><br>
-                        </div>
-                    </div>
+              </div>
+              <div class="navbar-text">
+                <div class="navbar-dropdown dropdown">
+                  <div
+                    class="circle-icon dropdown-toggle"
+                    aria-expanded="false"
+                    role="button"
+                    aria-haspopup="true"
+                  >
+                    <span style="color: black; font-size: 32px; font-weight: 700"
+                      >R</span
+                    >
+                  </div>
                 </div>
+              </div>
             </div>
-            <footer class="footer-custom text-center text-white">
-                <div class="container">
-                    <div class="row text-center d-flex justify-content-center pt-5">
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold"><a href="/" class="custom-link">Compendium</a>
-                            </h6>
+          </nav>
+        </header>
+
+        <div class="even-section">
+          <ul class="custom-list">
+            <li>
+              <div class="container">
+                <nav aria-label="breadcrumb">
+                  <ol
+                    class="breadcrumb"
+                    style="background-color: transparent"
+                  >
+                    <li class="breadcrumb-item">
+                      <a href="/">Compendium</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="#">Characters</a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <br />
+              <div class="container">
+                <h1 class="container titleText">Your Characters</h1>
+              </div>
+            </li>
+          </ul>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 my-5">
+                    <div
+                      class="char-list-item-null rounded p-3 my-3 text-center"
+                    >
+                      <div
+                        class="char-list-frame-null rounded p-3 my-3 text-center"
+                      >
+                        <div class="char-name-box-null">
+                          <div class="char-name-null">New Character</div>
                         </div>
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold"><a href="/profile"
-                                    class="custom-link">Profile</a></h6>
+                        <div
+                          class="char-list-frame-null2 rounded p-3 my-3 text-center"
+                        >
+                          <div class="char-item-content-null">
+                            <img
+                              class="char-class-image-null"
+                              src="/nochar.png"
+                              alt="Create Character"
+                            />
+                          </div>
                         </div>
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold"><a href="/campaign_lobby"
-                                    class="custom-link">Campaign Lobby</a></h6>
-                        </div>
+                      </div>
+                      <div id="createCharButton">
+                        <button
+                          class="btn custom-button"
+                          style="width: 150px; height: 2.4em"
+                        >
+                          Create Character
+                        </button>
+                      </div>
                     </div>
-                    <hr class="my-5 separator">
-                    <section class="mb-1">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-lg-8">
-                                <p>Este website foi desenvolvido como um projeto da cadeira "Tecnologias para a Web e
-                                    Ambientes Móveis" do curso de Engenharia Informática do Instituto Politécnico de
-                                    Beja.</p>
-                            </div>
-                        </div>
-                    </section>
+                  </div>
                 </div>
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2024 by<a> Raphael Jacuá
-                        &amp; Yara de Souza</a></div>
-            </footer>
+                <br /><br />
+              </div>
+            </div>
+          </div>
         </div>
+
+        <footer class="footer-custom text-center text-white">
+          <div class="container">
+            <div class="row text-center d-flex justify-content-center pt-5">
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="/" class="custom-link">Compendium</a>
+                </h6>
+              </div>
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="/profile" class="custom-link">Profile</a>
+                </h6>
+              </div>
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="/campaign_lobby" class="custom-link">Campaign Lobby</a>
+                </h6>
+              </div>
+            </div>
+            <hr class="my-5 separator" />
+            <section class="mb-1">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                  <p>
+                    Este website foi desenvolvido como um projeto da cadeira
+                    "Tecnologias para a Web e Ambientes Móveis" do curso de
+                    Engenharia Informática do Instituto Politécnico de Beja.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+          >
+            © 2024 by<a> Raphael Jacuá &amp; Yara de Souza</a>
+          </div>
+        </footer>
+      </div>
     </div>
-    <script type="module" src="/src/main.tsx?t=1719178020171"></script>
 
-
-</body>
-
+    <!-- Script principal -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

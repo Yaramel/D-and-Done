@@ -6,6 +6,29 @@ import { FaTrashAlt } from "react-icons/fa";
 import { getSpells, getSpellInfo, getEquipment, getEquipmentInfo, getClasses, getRaces, getCharInfo, getClassInfo, getRaceInfo } from '../FetchLogic.tsx'; // Import your fetch logic for spells
 import { Link, useLocation } from 'react-router-dom'
 
+// ================== IMPORTS DE ASSETS ==================
+import logo from '/src/assets/logo.png';
+import noCharSrc from '/src/assets/nochar.png';
+import noCampaignUrl from '/src/assets/themes/nocampaign.png';
+
+// glob para classes/illustrations
+// const classIllustrations = import.meta.glob('/src/assets/classes/illustrations/*.png', {
+//     eager: true,
+//     import: 'default',
+// }) as Record<string, string>;
+
+// glob para classes normais
+const classImages = import.meta.glob('/src/assets/classes/*.png', {
+    eager: true,
+    import: 'default',
+}) as Record<string, string>;
+
+// glob para themes
+// const themeImages = import.meta.glob('/src/assets/themes/*.png', {
+//     eager: true,
+//     import: 'default',
+// }) as Record<string, string>;
+
 interface classInputs {
     itemInfo: any;
     toFetch?: boolean;
@@ -80,7 +103,7 @@ export function ClassListItem({ itemInfo, toFetch }: classInputs) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                         </div>
                         <div className="col-md-2 d-flex align-items-center">
                             <a href={info && address} className="custom-link">  {info && info.name ? info.name : "-"} </a>
@@ -143,7 +166,7 @@ export function EquipmentListItem({ itemInfo }: equipmentInputs) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                         </div>
                         <div className="col-md-3 d-flex align-items-center">
                             <a href={itemInfo && address} className="custom-link">  {itemInfo && itemInfo.name ? itemInfo.name : "-"} </a>
@@ -208,7 +231,7 @@ export function MagicItemListItem({ itemInfo }: magicItemInputs) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                         </div>
                         <div className="col-md-3 d-flex align-items-center">
                             {itemInfo && itemInfo.name ? itemInfo.name : "-"}
@@ -293,7 +316,7 @@ export function RaceListItem({ itemInfo, toFetch }: raceInputs) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                         </div>
                         <div className="col-md-2 d-flex align-items-center">
                             <span className='list-header-mobile titleText'> Name: &nbsp;</span> <a href={info && address} className="custom-link">  {info && info.name ? info.name : "-"} </a>
@@ -330,8 +353,17 @@ export function RaceListItem({ itemInfo, toFetch }: raceInputs) {
 
 //====================================================================
 export function CharListItem({ itemInfo }: charInputs) {
-    const imageSrc = itemInfo ? `/src/assets/classes/illustrations/${itemInfo.char_class.toLowerCase()}.png` : '';
-    const NoCharSrc = `/src/assets/nochar.png`;
+
+
+
+    const classImages = import.meta.glob('/src/assets/classes/illustrations/*.png', {
+        eager: true,
+        import: 'default',
+    }) as Record<string, string>;
+
+    const imageSrc = itemInfo
+        ? classImages[`/src/assets/classes/illustrations/${itemInfo.char_class.toLowerCase()}.png`] : '';
+
 
     if (itemInfo == null) {
         return (
@@ -344,7 +376,7 @@ export function CharListItem({ itemInfo }: charInputs) {
 
                         <div className="char-item-content-null">
 
-                            <img className="char-class-image-null" src={NoCharSrc} alt="Create Character" />
+                            <img className="char-class-image-null" src={noCharSrc} alt="Create Character" />
 
                         </div>
                     </div>
@@ -375,8 +407,20 @@ export function CharListItem({ itemInfo }: charInputs) {
 
                     <div className="char-item-content-null" >
 
-                        <img className="char-class-image" src={imageSrc} alt="Class" />
-
+                        {/* <img className="char-class-image" src={imageSrc} alt="Class" /> */}
+                        <div
+                            style={{
+                                backgroundImage: `url(${imageSrc})`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                color: 'white',
+                                width: '250px',
+                                height: '250px',
+                                // objectFit: 'cover',
+                                position: 'relative',
+                                top: '-20px',
+                            }}>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -388,14 +432,16 @@ export function CharListItem({ itemInfo }: charInputs) {
                     text="View Details"
                 />
             </div>
-        </div>
+        </div >
     );
 }
 
 //====================================================================
 export function CharListItemCamp({ itemInfo }: charInputs) {
-    const imageSrc = itemInfo ? `/src/assets/classes/${itemInfo.char_class.toLowerCase()}.png` : '';
-    const NoCharSrc = `/src/assets/nochar.png`;
+    const imageSrc = itemInfo
+        ? classImages[`/src/assets/classes/${itemInfo.char_class.toLowerCase()}.png`]
+        : '';
+
 
     if (itemInfo == null) {
         return (
@@ -408,7 +454,7 @@ export function CharListItemCamp({ itemInfo }: charInputs) {
 
                         <div className="char-item-content-null">
 
-                            <img className="char-class-image-null" src={NoCharSrc} alt="Create Character" />
+                            <img className="char-class-image-null" src={noCharSrc} alt="Create Character" />
 
                         </div>
                     </div>
@@ -452,14 +498,20 @@ export function CharListItemCamp({ itemInfo }: charInputs) {
 
 export function CampaignListItem({ itemInfo }: CampaignInputs) {
 
-    const CampaignUrl = itemInfo ? `/src/assets/themes/${itemInfo.theme.toLowerCase()}.png` : '';
-    const NoCampaignUrl = `/src/assets/themes/nocampaign.png`;
+    const themeImages = import.meta.glob('/src/assets/themes/*.png', {
+        eager: true,
+        import: 'default',
+    }) as Record<string, string>;
+
+    const CampaignUrl = itemInfo
+        ? themeImages[`/src/assets/themes/${itemInfo.theme.toLowerCase()}.png`] : '';
+
 
     if (!itemInfo) {
         return (
             <div className="camp-list-item rounded p-3  text-center background-camp-image"
                 style={{
-                    backgroundImage: `url(${NoCampaignUrl})`,
+                    backgroundImage: `url(${noCampaignUrl})`,
                     color: 'white',
                 }}>
                 <div className="char-list-frame-null rounded p-3 text-center">
@@ -534,12 +586,12 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
 
                 }
 
-{/* HOMEBREW DAQUI PRA FRENTE */}
+                {/* HOMEBREW DAQUI PRA FRENTE */}
                 {((itemInfo.homebrews.rules?.length > 0 && !itemInfo.homebrews.rules.includes(null)) || (itemInfo.homebrews.spells.length > 0 && !itemInfo.homebrews.spells.includes(null)))
                     && (<>
                         <br />
                         <span className="camp-detail">Homebrew List: </span>
-                        
+
                     </>
                     )}
                 <br />
@@ -547,7 +599,7 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
                     itemInfo.homebrews.rules.map((item, index) => (
                         <span key={index}>
                             -{item.name} (rule)
-                            
+
                             {index < itemInfo.homebrews.rules.length - 1 && " "}
                             <br />
                         </span>
@@ -561,7 +613,7 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
                             <br />
                             {index < itemInfo.homebrews.spells.length - 1 && " "}
                             <br />
-                            
+
                         </span>
                     ))
 
@@ -694,7 +746,7 @@ export function SpellListItem({ itemInfo, toFetch }: spellInputs) {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
 
                             <div className="d-flex align-items-center m-2" style={{ fontSize: "small" }}>
                                 <span className='list-header-mobile titleText'> Level: &nbsp;</span>{info && (info.level == "0" ? "Cantrip" :
@@ -720,7 +772,7 @@ export function SpellListItem({ itemInfo, toFetch }: spellInputs) {
                             <span className='list-header-mobile titleText'> Attack/Save: &nbsp;</span>{info && info.dc ? `${info.dc.dc_type.name} for ${info && info.dc.dc_success ? info.dc.dc_success : "none"}` : (info && info.attack_type ? info.attack_type : "-")}
                         </div>
                         <div className="col-md-1 d-flex align-items-center">
-                            <span className='list-header-mobile titleText'> Damage/Effect: &nbsp;</span>{info && info.damage ? (info.damage.damage_at_slot_level ? `${info.damage.damage_at_slot_level[info.level]} / ${info.damage.damage_type.name}` : (info.damage_at_slot_level ? `${info.damage_at_slot_level[0].replace(" ","")} /` + (info.damage.damage_type.name == 'Select' ? 'Fire' : `${info.damage.damage_type.name}`) : "-")) : "-"}
+                            <span className='list-header-mobile titleText'> Damage/Effect: &nbsp;</span>{info && info.damage ? (info.damage.damage_at_slot_level ? `${info.damage.damage_at_slot_level[info.level]} / ${info.damage.damage_type.name}` : (info.damage_at_slot_level ? `${info.damage_at_slot_level[0].replace(" ", "")} /` + (info.damage.damage_type.name == 'Select' ? 'Fire' : `${info.damage.damage_type.name}`) : "-")) : "-"}
                         </div>
                         <div className="col-md-1 d-flex align-items-center mx-4">
                             <span className='list-header-mobile titleText' style={{ margin: "-25px" }}> School: &nbsp;</span> <span style={{ marginLeft: "25px" }}></span>{info.school ? info.school.name : info.school}
@@ -806,7 +858,7 @@ export function SpellListItemPost({ onDelete, initialSpell, charClass, charLevel
                 <div className="container">
                     <div className="row">
                         <div className="col-md-1 d-flex align-items-center">
-                            <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                            <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                             <div className="d-flex align-items-center m-2" style={{ fontSize: "small" }}>
                                 {selectedSpell.level === "0" ? "Cantrip" :
                                     (selectedSpell.level === "1" ? `${selectedSpell.level}st` :
@@ -953,7 +1005,7 @@ export function EquipmentListItemPost({ onDelete, initialEquipment, cat, index, 
                     {selectedEquipment ? (
                         <>
                             <div className="col-md-1 d-flex align-items-center">
-                                <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+                                <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
                             </div>
                             <div className="col-md-3 d-flex align-items-center">
                                 {selectedEquipment.name || "-"}
@@ -1031,7 +1083,7 @@ export function EquipmentListItemPost({ onDelete, initialEquipment, cat, index, 
 //                 <div className="container">
 //                     <div className="row">
 //                         <div className="col-md-1 d-flex align-items-center">
-//                             <img className="noBackground" src="/src/assets/logo.png" alt="Logo" width="30" height="30" />
+//                             <img className="noBackground" src={logo} alt="Logo" width="30" height="30" />
 //                         </div>
 //                         <div className="col-md-3 d-flex align-items-center">
 //                             {selectedEquipment && selectedEquipment.name ? selectedEquipment.name : "-"}
