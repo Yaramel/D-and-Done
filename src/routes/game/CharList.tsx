@@ -32,7 +32,9 @@ export default function CharList() {
         className="text-center background-camp-image"
         style={{
           backgroundImage: `url(${nopUrl})`,
-          color: 'white',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          color: "white",
         }}
       >
         <h1

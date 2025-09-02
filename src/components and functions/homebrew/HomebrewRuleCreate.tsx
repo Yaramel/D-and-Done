@@ -135,6 +135,8 @@ export default function HomebrewRuleCreate() {
         className="text-center background-camp-image"
         style={{
           backgroundImage: `url(${nopUrl})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
           color: "white",
         }}
       >

@@ -47,7 +47,13 @@ export default function ClassInfoBoard({ classData }: inputs) {
         }
     };
 
-    const ClassUrl = `/src/assets/classes/illustrations/${classData.name.toLowerCase()}.png`;
+const classImages = import.meta.glob("/src/assets/classes/illustrations/*.png", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+
+const ClassUrl = classImages[`/src/assets/classes/illustrations/${classData.name.toLowerCase()}.png`] || "";
 
     return (
 
@@ -68,6 +74,7 @@ export default function ClassInfoBoard({ classData }: inputs) {
                         backgroundImage: `url(${ClassUrl})`,
                         color: 'white',
                     }}>
+
                     <div className="row ">
                         <div className="">
                             <div className="table-responsive ">

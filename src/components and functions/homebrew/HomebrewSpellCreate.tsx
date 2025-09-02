@@ -472,16 +472,32 @@ export default function HomebrewSpellCreate() {
 
         style={{
           backgroundImage: `url(${nopUrl})`,
-          color: 'white',
-        }}>
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          color: "white",
+        }}
+      >
         <h1 style={{ marginTop: "25%", filter: "drop-shadow(1px 1px 1px black) drop-shadow(-1px -1px 1px black)" }}>Please log in as Master to create homebrew spells.</h1>
       </div>
     );
   }
 
 
-  // console.log(user[0].username)
-  const spellUrl = `/src/assets/magic.jpg`;
+  const spellImages = import.meta.glob("/src/assets/*.jpg", {
+    eager: true,
+    import: "default",
+  }) as Record<string, string>;
+
+  const spellUrl =
+    spellImages[`/src/assets/magic.jpg`] || "";
+
+  const schoolImages = import.meta.glob("/src/assets/spell-schools/*.png", {
+    eager: true,
+    import: "default",
+  }) as Record<string, string>;
+
+  const schoolUrl =
+    schoolImages[`/src/assets/spell-schools/${schoolPic.toLowerCase()}.png`] || "";
 
   return (
     <div className='even-section'>
@@ -680,7 +696,13 @@ export default function HomebrewSpellCreate() {
 
                 <div className="col-md-4 noBackground">
                   <div className="rounded-circle img-container d-flex justify-content-center align-items-center" style={{ backgroundColor: "#0f0f0f", maxWidth: "300px", maxHeight: "300px" }}>
-                    <img alt="Spell School" className="img-thumbnail img-fluid border-0" src={"/src/assets/spell-schools/" + schoolPic + ".png"} />
+                    <img alt="Spell School" className="img-thumbnail img-fluid border-0"
+
+                      src={
+                        schoolUrl
+                      }
+                    />
+
                   </div>
                 </div>
 

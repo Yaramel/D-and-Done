@@ -105,7 +105,6 @@ export default function CharInfoboard({ charData }: CharInfoboardProps) {
     setEquipedArmorClass(base_armor + total_bonus);
   };
 
-  // imagens de fundo e ícone da classe
   const classBGImageUrl =
     classBGImages[`/src/assets/classes/illustrations/${charData.char_class.toLowerCase()}.png`] || "";
 

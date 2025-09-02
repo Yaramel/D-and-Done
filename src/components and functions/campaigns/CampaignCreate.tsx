@@ -281,6 +281,8 @@ export default function CampaignCreate() {
         className="text-center background-camp-image"
         style={{
           backgroundImage: `url(${nopImg})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
           color: "white",
         }}
       >

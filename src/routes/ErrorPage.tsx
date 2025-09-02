@@ -14,8 +14,10 @@ export default function ErrorPage() {
       className="text-center background-camp-image-404"
       style={{
         backgroundImage: `url(${NotfoundUrl})`,
-        color: "white",
-      }}
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          color: "white",
+        }}
     >
       <h1
         style={{

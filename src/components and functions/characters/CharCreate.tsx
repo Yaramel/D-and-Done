@@ -128,7 +128,7 @@ export default function CharCreate() {
   const [charClassPic, setCharClassPic] = useState("default");
   const handleCharClassChange = (value: string) => {
     setCharClass(value);
-    setCharClassPic(value);
+    setCharClassPic(value);  
   };
 
   // resolve imagem de fundo da classe
@@ -480,6 +480,8 @@ export default function CharCreate() {
         className="text-center background-camp-image"
         style={{
           backgroundImage: `url(${nopUrl})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
           color: "white",
         }}
       >

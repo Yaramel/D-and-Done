@@ -512,8 +512,15 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
             <div className="camp-list-item rounded p-3  text-center background-camp-image"
                 style={{
                     backgroundImage: `url(${noCampaignUrl})`,
-                    color: 'white',
-                }}>
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: '47% 20%',
+                    color: "white",
+                    backgroundColor: "rgba(0, 0, 0, 0.2)",
+                    backgroundBlendMode: "darken",
+
+                }}
+            >
                 <div className="char-list-frame-null rounded p-3 text-center">
                     <div className="camp-name-box-null">
                         <Link to="/campaigns/creation">
@@ -529,7 +536,7 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
                         text="Create Campaign"
                     />
                 </div>
-            </div>
+            </div >
         );
     }
     const address = (window.location.href.replace(location.pathname, "") + "/campaigns/" + itemInfo.index?.replaceAll("/", ""))
@@ -538,8 +545,14 @@ export function CampaignListItem({ itemInfo }: CampaignInputs) {
         <div className="camp-list-item rounded p-3  text-center background-camp-image"
             style={{
                 backgroundImage: `url(${CampaignUrl})`,
-                color: 'white',
-            }}>
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: '50% 20%',
+                color: "white",
+                backgroundColor: "rgba(0, 0, 0, 0.2)",
+                backgroundBlendMode: "darken",
+            }}
+        >
             <div className="camp-details">
                 <span className="camp-detail">Master: {itemInfo.master}</span>
                 <br />
